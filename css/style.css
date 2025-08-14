@@ -1138,7 +1138,78 @@
     }
 }
 
+/* Updated Responsive Adjustments */
+@media (max-width: 1200px) {
+    .collection-box {
+        flex: 0 0 calc(50% - 1rem); /* 2 items on tablet */
+        height: 450px;
+    }
+}
 
+@media (max-width: 768px) {
+    .collections-section {
+        margin-top: 3rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .collections-container {
+        width: 100%; /* Full width */
+        margin: 0;
+        padding: 0 1rem; /* Add padding instead of margin */
+        gap: 0.75rem; /* Reduced gap */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .collection-box {
+        flex: 0 0 calc(33.33% - 0.5rem); /* 3 items with reduced gap */
+        height: 380px; /* Slightly reduced height */
+        min-width: calc(33.33% - 0.5rem); /* Ensure consistent width */
+        scroll-snap-align: center; /* Better centering for mobile */
+    }
+
+    .slider-btn {
+        display: none; /* Hide buttons on mobile since we're showing all */
+    }
+}
+
+@media (max-width: 480px) {
+    .collections-container {
+        gap: 0.5rem; /* Even smaller gap */
+        padding: 0 0.5rem;
+    }
+
+    .collection-box {
+        flex: 0 0 calc(33.33% - 0.33rem);
+        height: 320px;
+        min-width: calc(33.33% - 0.33rem);
+    }
+
+    .collection-content {
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .collection-content h3 {
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .shop-now-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small adjustments */
+@media (max-width: 360px) {
+    .collection-box {
+        height: 280px;
+    }
+    
+    .collection-content h3 {
+        margin-bottom: 0.3rem;
+    }
+}
 /* Original laptop/desktop styles (unchanged) */
 .capsule-slider {
   display: flex;
@@ -1220,16 +1291,14 @@
   background-color: #000;
 }
 
-/* Responsive adjustments (only for smaller screens) */
+/* Responsive adjustments (updated for smaller screens) */
 @media (max-width: 1200px) {
-  /* Slightly reduce padding for large laptops */
   .capsule-slider {
     padding: 60px 60px;
   }
 }
 
 @media (max-width: 1024px) {
-  /* Adjust spacing for smaller laptops */
   .capsule-slider {
     gap: 30px;
   }
@@ -1239,7 +1308,6 @@
 }
 
 @media (max-width: 900px) {
-  /* Tablet layout - switch to vertical stacking */
   .capsule-slider {
     flex-direction: column;
     padding: 50px 40px;
@@ -1252,12 +1320,27 @@
   .dot-nav {
     right: 20px;
   }
+  .capsule-left {
+    text-align: center;
+  }
+  .capsule-left h2 {
+    margin-bottom: 15px;
+  }
+  .capsule-left p {
+    text-align: center; /* Center-align paragraph */
+    width: 100%; /* Ensure full width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .read-more-btn {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Large mobile devices */
   .capsule-slider {
-    padding: 40px 30px;
+    padding: 40px 20px;
   }
   .capsule-left h2 {
     font-size: 32px;
@@ -1265,40 +1348,65 @@
   .capsule-right img {
     height: 300px;
   }
+  .capsule-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 600px) {
-  /* Medium mobile devices */
   .capsule-slider {
-    padding: 30px 20px;
+    padding: 30px 10px;
   }
   .capsule-left h2 {
     font-size: 28px;
   }
+  .capsule-right img {
+    height: 250px;
+  }
   .dot-nav {
-    right: 15px;
-  gap: 8px;
+    right: 10px;
+    gap: 8px;
   }
   .dot {
     width: 8px;
     height: 8px;
   }
+  .capsule-left p {
+    font-size: 13px;
+    margin-bottom: 15px;
+    padding: 0 10px; /* Add slight padding for readability */
+  }
 }
 
 @media (max-width: 480px) {
-  /* Small mobile devices */
   .capsule-slider {
-    padding: 25px 15px;
+    padding: 20px 5px;
   }
   .capsule-left h2 {
     font-size: 24px;
+    margin-bottom: 10px;
   }
   .capsule-right img {
-    height: 250px;
-    border-radius: 10px;
+    height: 200px;
+    border-radius: 8px;
+  }
+  .capsule-left p {
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 0 5px; /* Minimal padding for very small screens */
   }
   .read-more-btn {
-    padding: 8px 16px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  .dot-nav {
+    right: 5px;
+    gap: 6px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
   }
 }
 
@@ -1626,7 +1734,7 @@
         font-size: 0.9em;
     }
     .product-card {
-        height: 380px;
+        height: 400px;
     }
 }
 
@@ -1635,7 +1743,7 @@
         height: 200px;
     }
     .product-card {
-        height: 350px;
+        height: 450px;
     }
     .product-card .shop-now {
         padding: 8px 40px;
@@ -2025,6 +2133,125 @@
 
 .capsule-dots .dot.active {
   background-color: #000;
+}
+/* Default desktop styles (unchanged) */
+.capsule-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e6e0;
+  padding: 60px 80px;
+  font-family: 'Inter', sans-serif;
+  gap: 40px;
+}
+
+.capsule-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.capsule-left h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.capsule-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.read-more-btn {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.capsule-right {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Mobile styles to match your reference image */
+@media (max-width: 768px) {
+  .capsule-slider {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 30px;
+    text-align: center; /* Center-align all content */
+  }
+
+  .capsule-left {
+    max-width: 100%;
+    padding: 0; /* Remove padding for full-width text */
+  }
+
+  .capsule-left h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    color: #000;
+    text-align: center; /* Explicit center for heading */
+  }
+
+  .capsule-left p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+    text-align: center; /* Center paragraph */
+    max-width: 100%; /* Full width text */
+    padding: 0 10px; /* Small side padding */
+  }
+
+  .read-more-btn {
+    margin: 0 auto; /* Center button */
+    display: block; /* Make it a block to center properly */
+    width: fit-content; /* Button width based on content */
+    padding: 10px 25px; /* Slightly larger tap target */
+    font-size: 14px;
+    border: 1px solid #000; /* Match your reference */
+    background: transparent;
+    border-radius: 30px;
+  }
+
+  .capsule-right {
+    max-width: 100%;
+    order: -1; /* Optional: Move image to top if preferred */
+  }
+
+  /* Hide dots on mobile if present */
+  .dot-nav {
+    display: none;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .capsule-left h2 {
+    font-size: 24px; /* Slightly smaller heading */
+  }
+
+  .capsule-left p {
+    font-size: 15px; /* Slightly smaller text */
+  }
+
+  .read-more-btn {
+    padding: 8px 20px; /* Smaller button */
+  }
 }
 
 .favorite-card {
@@ -2607,7 +2834,62 @@
   display: none;
 }
 
+/* Mobile Vertical Layout */
+@media (max-width: 768px) {
+  .favorites-carousel {
+    display: block; /* Change from flex to block layout */
+  }
 
+  .favorites-track {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+    gap: 25px; /* Vertical spacing between cards */
+    overflow-x: visible; /* Disable horizontal scrolling */
+    padding: 15px 0; /* Vertical padding only */
+    width: 100%; /* Full width */
+    margin: 0; /* Remove horizontal margin */
+  }
+
+  .favorite-card {
+    flex: 0 0 auto; /* Let cards determine their own height */
+    width: 90%; /* Card width (adjust as needed) */
+    max-width: 350px; /* Maximum card width */
+    min-width: 0; /* Override previous min-width */
+    margin: 0 auto; /* Center cards horizontally */
+  }
+
+  /* Hide navigation elements completely */
+  .carousel-nav,
+  .carousel-dots {
+    display: none !important;
+  }
+
+  /* Adjust image height for vertical layout */
+  .favorite-card img {
+    height: 220px; /* Fixed height for consistency */
+  }
+
+  /* Full-width overlay for mobile */
+  .card-overlay {
+    height: 100%; /* Cover entire card */
+    padding: 20px;
+  }
+}
+
+/* Smaller mobile adjustments */
+@media (max-width: 480px) {
+  .favorites-track {
+    gap: 20px;
+  }
+  
+  .favorite-card {
+    width: 95%; /* Slightly wider cards */
+  }
+
+  .favorite-card img {
+    height: 300px;
+  }
+}
 
 
 .featured-section {
